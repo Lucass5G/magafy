@@ -11,6 +11,7 @@
   --font-dm-sans: "DM Sans", Arial, sans-serif;
 
   --color-button-primary: var(--button-primary);
+  --color-button-foreground: var(--button-foreground);
   --color-grey-500: #949ea2;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -88,7 +89,8 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-  --button-primary: oklch(0.6888 0.187 148.92);
+  --button-primary: oklch(0.6978 0.152 145.59);
+  --button-foreground: oklch(0.1961 0.0065 17.72);
 }
 
 .dark {

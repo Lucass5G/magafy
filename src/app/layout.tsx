@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
-import { Rubik, DM_Sans  } from "next/font/google";
+import { DM_Sans, Rubik } from "next/font/google";
 import "./globals.css";
 
 const rubik = Rubik({
-    variable: "--font-rubik",
-    subsets: ["latin"],
-    weight: ["400", "500", "700"],
-})
+  variable: "--font-rubik",
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
 
 const dmSans = DM_Sans({
-    variable: "--font-dm-sans",
-    subsets: ["latin"],
-    weight: ["700"],
-})
+  variable: "--font-dm-sans",
+  subsets: ["latin"],
+  weight: ["700"],
+});
 
 export const metadata: Metadata = {
   title: "Magafy",
@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${rubik.variable} ${dmSans.variable} antialiased`}
+        className={`${rubik.variable} ${dmSans.variable} antialiased h-full`}
       >
         {children}
       </body>
