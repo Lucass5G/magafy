@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Magafy.iml" filepath="$PROJECT_DIR$/.idea/Magafy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/magafy.iml" filepath="$PROJECT_DIR$/.idea/magafy.iml" />
     </modules>
   </component>
 </project>
