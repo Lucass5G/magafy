@@ -34,3 +34,23 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+# Requisitos
+## Requisitos obrigatórios
+- [ ] Seguimentação de commits
+- [ ] Lint
+- [ ] Autenticação via Spotify
+- [ ] Listar artistas
+- [ ] Listar albuns de um artista
+- [ ] Utilizar paginação (scroll infinito ou não)
+- [ ] Funcionamento offline
+- [ ] Testes unitários
+- [ ] Deploy da aplicação
+## Bônus
+- [ ] Testes E2E
+- [ ] Integração com Sentry
+- [ ] CI/CD
+- [ ] Responsividade (celular e tablet)
+- [ ] Qualidade de código (Sonarqube)
+- [ ] PWA
