@@ -7,8 +7,6 @@ export async function middleware(request: NextRequest) {
     headers: await headers(),
   });
 
-  console.log("Session: ", session)
-
   if (!session) {
     return NextResponse.redirect(new URL("/", request.url));
   }
