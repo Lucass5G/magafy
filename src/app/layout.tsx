@@ -1,6 +1,8 @@
 import type {Metadata} from "next";
 import {DM_Sans, Rubik} from "next/font/google";
 import "./globals.css";
+import {AppSidebar} from "@components/AppSidebar";
+import {SidebarProvider, SidebarTrigger} from "@components/Sidebar";
 import {ReactQueryProvider} from "@lib/react-query-provider";
 import {NuqsAdapter} from "nuqs/adapters/next";
 import type {ReactNode} from "react";
@@ -32,9 +34,15 @@ export default function RootLayout({
       <body
         className={`${rubik.variable} ${dmSans.variable} antialiased h-full`}
       >
-        <NuqsAdapter>
-          <ReactQueryProvider>{children}</ReactQueryProvider>
-        </NuqsAdapter>
+        <SidebarProvider>
+          <NuqsAdapter>
+            <ReactQueryProvider>
+              <SidebarTrigger />
+              <AppSidebar />
+              {children}
+            </ReactQueryProvider>
+          </NuqsAdapter>
+        </SidebarProvider>
       </body>
     </html>
   );

@@ -1,5 +1,6 @@
-import type { HeadingProps } from "@components/Typography/typography";
-import { headingVariants } from "@components/Typography/variants";
+"use client";
+import type {HeadingProps} from "@components/Typography/typography";
+import {headingVariants} from "@components/Typography/variants";
 
 export function Heading({
   className,
