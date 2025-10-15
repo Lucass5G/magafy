@@ -27,8 +27,8 @@ const items = [
     icon: DiscIcon,
   },
   {
-    title: "Playlist",
-    url: "/playlist",
+    title: "Playlists",
+    url: "/playlists",
     icon: PlayIcon,
   },
   {
