@@ -39,7 +39,7 @@ const items = [
 ];
 export function AppSidebar() {
   const pathname = usePathname();
-  console.log(pathname);
+
   return (
     <Sidebar>
       <SidebarHeader className="p-8">
