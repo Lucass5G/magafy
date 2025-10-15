@@ -3,6 +3,7 @@ import {DM_Sans, Rubik} from "next/font/google";
 import "./globals.css";
 import {ReactQueryProvider} from "@lib/react-query-provider";
 import {NuqsAdapter} from "nuqs/adapters/next";
+import type {ReactNode} from "react";
 
 const rubik = Rubik({
   variable: "--font-rubik",
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="pt-BR">

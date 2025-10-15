@@ -1,5 +1,5 @@
 import {useSuspenseQuery} from "@tanstack/react-query";
-import {useArtistsStore} from "@/_layouts/artist/artists.store";
+import {useArtistsStore} from "@/_layouts/Artist/artists.store";
 import {getArtistsOptions} from "@/_services/artists/get-artists/get-artists-options";
 
 export function useArtist() {

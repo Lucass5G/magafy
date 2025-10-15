@@ -8,19 +8,12 @@ import {
 } from "@components/Pagination";
 import {Heading} from "@components/Typography";
 import Image from "next/image";
-import {useArtist} from "@/_layouts/artist/use-artist";
+import {useArtist} from "@/_layouts/Artist/use-artist";
 
 export function TopArtist() {
   const { artists, nextArtists, previousArtists } = useArtist();
 
   return (
-    <main className={"flex flex-col gap-4"}>
-      <section className={"flex flex-col gap-2 p-8"}>
-        <Heading as={"h2"}>Top Artistas</Heading>
-        <Heading as={"h5"} className={"text-grey-300"}>
-          Aqui você encontra seus artistas preferidos
-        </Heading>
-      </section>
       <section className={"flex flex-col gap-4 px-8"}>
         {artists.data._data.items.map((artist) => (
           <div className={"flex flex-row gap-4 items-center"} key={artist.id}>
@@ -47,6 +40,5 @@ export function TopArtist() {
           </Pagination>
         </section>
       </section>
-    </main>
   );
 }
