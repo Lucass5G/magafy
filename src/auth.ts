@@ -1,8 +1,10 @@
 import {betterAuth} from "better-auth";
+import {nextCookies} from "better-auth/next-js";
 import Database from "better-sqlite3";
 import {env} from "@/_config/env";
 
 export const auth = betterAuth({
+  plugins: [nextCookies()],
   database: new Database("database.sqlite"),
   baseURL: "http://127.0.0.1:3000",
   trustedOrigins: ["http://127.0.0.1:3000"],
