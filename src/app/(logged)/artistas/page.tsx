@@ -1,5 +1,10 @@
-import { TopArtist } from "@/_layouts/artist";
+import {TopArtist} from "@/_layouts/artist";
+import {Suspense} from "react";
 
 export default function ArtistsPage() {
-  return <TopArtist />;
+  return (
+    <Suspense fallback={<div>Carregando artistas</div>}>
+      <TopArtist />
+    </Suspense>
+  );
 }

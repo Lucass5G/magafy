@@ -39,7 +39,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 # Requisitos
 ## Requisitos obrigatórios
 - [ ] Seguimentação de commits
-- [ ] Lint
+- [X] Lint
 - [ ] Autenticação via Spotify
 - [ ] Listar artistas
 - [ ] Listar albuns de um artista

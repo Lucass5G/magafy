@@ -1,5 +1,6 @@
 import {ofetch} from "ofetch";
 
 export const apiFetch = ofetch.create({
-  baseURL: `${process.env.BETTER_AUTH_URL}/api`,
+  baseURL: "http://127.0.0.1:3000/api",
+  retry: 1,
 });

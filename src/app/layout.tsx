@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
-import { DM_Sans, Rubik } from "next/font/google";
+import type {Metadata} from "next";
+import {DM_Sans, Rubik} from "next/font/google";
 import "./globals.css";
+import {ReactQueryProvider} from "@lib/react-query-provider";
+import {NuqsAdapter} from "nuqs/adapters/next";
 
 const rubik = Rubik({
   variable: "--font-rubik",
@@ -29,7 +31,9 @@ export default function RootLayout({
       <body
         className={`${rubik.variable} ${dmSans.variable} antialiased h-full`}
       >
-        {children}
+        <NuqsAdapter>
+          <ReactQueryProvider>{children}</ReactQueryProvider>
+        </NuqsAdapter>
       </body>
     </html>
   );
