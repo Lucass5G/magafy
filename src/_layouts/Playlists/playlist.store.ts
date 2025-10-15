@@ -1,19 +1,15 @@
 import {create} from "zustand/react";
+import type {PaginationProps} from "@/_layouts/Artist/artists.store";
 
-export type PaginationProps = {
-  offset: number;
-  limit: number;
-};
-
-type UseArtistsStoreProps = {
+type UsePlaylistStoreProps = {
   pagination: PaginationProps;
   setPagination: (val: Partial<PaginationProps>) => void;
 };
 
-export const useArtistsStore = create<UseArtistsStoreProps>((set) => ({
+export const usePlaylistStore = create<UsePlaylistStoreProps>((set) => ({
   pagination: {
     offset: 0,
-    limit: 2,
+    limit: 10,
   },
   setPagination: (val) =>
     set((state) => ({

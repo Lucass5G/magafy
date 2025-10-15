@@ -18,7 +18,7 @@ import {usePathname} from "next/navigation";
 const items = [
   {
     title: "Inicio",
-    url: "#",
+    url: "/",
     icon: HomeIcon,
   },
   {

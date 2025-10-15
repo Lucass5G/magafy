@@ -7,13 +7,15 @@ export const PlaylistsItemSchema = z.object({
   href: z.url(),
   images: ImageSchema.array(),
   name: z.string(),
-  owner: z.object({
-    id: z.string(),
-    href: z.url(),
-    type: z.string(),
-    uri: z.string(),
-    display_name: z.string().nullable(),
-  }),
+  owner: z
+    .object({
+      id: z.string(),
+      href: z.url(),
+      type: z.string(),
+      uri: z.string(),
+      display_name: z.string().nullable(),
+    })
+    .optional(),
   public: z.string(),
   type: z.string(),
   uri: z.string(),
