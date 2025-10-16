@@ -15,6 +15,8 @@ export const ArtistsItemSchema = z.object({
   type: z.string(),
 });
 
+export type ArtistItemProps = z.infer<typeof ArtistsItemSchema>;
+
 export const ArtistsSchema = z.object({
   items: ArtistsItemSchema.array(),
   limit: z.number(),

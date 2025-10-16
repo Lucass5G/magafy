@@ -8,7 +8,7 @@ import {
 } from "@components/Pagination";
 import {Heading} from "@components/Typography";
 import Image from "next/image";
-import {usePlaylists} from "@/_layouts/Playlists/use-playlists";
+import {usePlaylists} from "@/_layouts/(Playlists)/Playlists/use-playlists";
 
 export function Playlists() {
   const { playlists, nextPlaylists, previousPlaylists } = usePlaylists();

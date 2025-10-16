@@ -1,5 +1,5 @@
 import {create} from "zustand/react";
-import type {PaginationProps} from "@/_layouts/Artist/artists.store";
+import type {PaginationProps} from "@/_layouts/(Artists)/Artist/artists.store";
 
 type UsePlaylistStoreProps = {
   pagination: PaginationProps;

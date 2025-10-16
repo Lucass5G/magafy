@@ -1,11 +1,11 @@
-import {Heading} from "@components/Typography";
+import type {Metadata} from "next";
 import {redirect} from "next/navigation";
 import {Suspense} from "react";
-import {TopArtist} from "@/_layouts/Artist";
-import {ArtistsSkeleton} from "@/_layouts/Artist/artists.skeleton";
+import {TopArtist} from "@/_layouts/(Artists)/Artist";
+import {ArtistsSkeleton} from "@/_layouts/(Artists)/Artist/artists.skeleton";
 import {useHasSession} from "@/_utils/has-session";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Artistas | Magafy",
 };
 
@@ -17,16 +17,8 @@ export default async function ArtistsPage() {
   }
 
   return (
-    <main className={"flex flex-col gap-4 w-full"}>
-      <section className={"flex flex-col gap-2 p-8"}>
-        <Heading as={"h2"}>Top Artistas</Heading>
-        <Heading as={"h5"} className={"text-grey-300"}>
-          Aqui você encontra seus artistas preferidos
-        </Heading>
-      </section>
-      <Suspense fallback={<ArtistsSkeleton />}>
-        <TopArtist />
-      </Suspense>
-    </main>
+    <Suspense fallback={<ArtistsSkeleton />}>
+      <TopArtist />
+    </Suspense>
   );
 }

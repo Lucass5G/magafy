@@ -1,4 +1,5 @@
 import {create} from "zustand/react";
+import type {ArtistItemProps} from "@/_services/artists/get-artists/get-artists";
 
 export type PaginationProps = {
   offset: number;
@@ -7,7 +8,9 @@ export type PaginationProps = {
 
 type UseArtistsStoreProps = {
   pagination: PaginationProps;
+  currentArtist: ArtistItemProps | null;
   setPagination: (val: Partial<PaginationProps>) => void;
+  setCurrentArtist: (artist: ArtistItemProps | null) => void;
 };
 
 export const useArtistsStore = create<UseArtistsStoreProps>((set) => ({
@@ -15,6 +18,7 @@ export const useArtistsStore = create<UseArtistsStoreProps>((set) => ({
     offset: 0,
     limit: 2,
   },
+  currentArtist: null ,
   setPagination: (val) =>
     set((state) => ({
       pagination: {
@@ -22,4 +26,5 @@ export const useArtistsStore = create<UseArtistsStoreProps>((set) => ({
         ...val,
       },
     })),
+  setCurrentArtist: (artist) => set({ currentArtist: artist }),
 }));

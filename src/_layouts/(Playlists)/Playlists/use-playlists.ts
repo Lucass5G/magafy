@@ -1,5 +1,5 @@
 import {useSuspenseQuery} from "@tanstack/react-query";
-import {usePlaylistStore} from "@/_layouts/Playlists/playlist.store";
+import {usePlaylistStore} from "@/_layouts/(Playlists)/Playlists/playlist.store";
 import {getPlaylistsOptions} from "@/_services/playlists/get-playlists/get-playlists-options";
 
 export function usePlaylists() {

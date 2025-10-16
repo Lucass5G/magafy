@@ -1,7 +1,7 @@
 "use client";
 import {Skeleton} from "@components/Skeleton";
 import {generateId} from "better-auth";
-import {useArtistsStore} from "@/_layouts/Artist/artists.store";
+import {useArtistsStore} from "@/_layouts/(Artists)/Artist/artists.store";
 
 export function ArtistsSkeleton() {
   const { pagination } = useArtistsStore();

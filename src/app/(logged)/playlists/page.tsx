@@ -2,7 +2,7 @@ import {CreatePlaylistForm} from "@components/(Playlists)/CreatePlaylistForm";
 import {Heading} from "@components/Typography";
 import {redirect} from "next/navigation";
 import {Suspense} from "react";
-import {Playlists} from "@/_layouts/Playlists";
+import {Playlists} from "@/_layouts/(Playlists)/Playlists";
 import {useHasSession} from "@/_utils/has-session";
 
 export default async function PlaylistsPage() {

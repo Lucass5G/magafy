@@ -1,15 +1,17 @@
 import {useSuspenseQuery} from "@tanstack/react-query";
-import {useArtistsStore} from "@/_layouts/Artist/artists.store";
+import {useArtistsStore} from "@/_layouts/(Artists)/Artist/artists.store";
 import {getArtistsOptions} from "@/_services/artists/get-artists/get-artists-options";
 
 export function useArtist() {
-  const { pagination, setPagination } = useArtistsStore();
+  const { pagination, setPagination, currentArtist } = useArtistsStore();
   const artists = useSuspenseQuery({
     ...getArtistsOptions({
       offset: pagination.offset,
       limit: pagination.limit,
     }),
   });
+
+  console.log("Current: ", currentArtist);
 
   function nextArtists() {
     if (!artists.data._data.next) return;
