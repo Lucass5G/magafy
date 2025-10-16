@@ -5,19 +5,18 @@ import {nextCookies} from "better-auth/next-js";
 import {env} from "@/_config/env";
 
 const prisma = new PrismaClient();
-const trustedOrigin = ["http://127.0.0.1:3000"].concat(
-  [env.VERCEL_URL, env.VERCEL_BRANCH_URL].filter(Boolean) as string[],
-);
-
-console.log("Trusted: ", trustedOrigin);
 
 export const auth = betterAuth({
   plugins: [nextCookies()],
   database: prismaAdapter(prisma, {
     provider: "postgresql",
   }),
-  baseURL: env.VERCEL_BRANCH_URL || env.VERCEL_URL || "http://127.0.0.1:3000",
-  trustedOrigins: trustedOrigin,
+  baseURL: env.BASE_URL,
+  trustedOrigins: [
+    "https://magafy.vercel.app",
+    "https://magafy-preview.vercel.app",
+    "http://127.0.0.1:3000",
+  ],
   advanced: {
     cookiePrefix: "better-auth",
     useSecureCookies: false,
