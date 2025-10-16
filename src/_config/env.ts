@@ -5,9 +5,14 @@ import {betterAuthEnv} from "@/_config/better-auth.env";
 
 export const env = createEnv({
   server: {
-    BASE_URL: z.string(),
+    BETTER_AUTH_URL: z.string(),
   },
-  experimental__runtimeEnv: process.env,
+  client: {
+    NEXT_PUBLIC_BASE_URL: z.string(),
+  },
+  experimental__runtimeEnv: {
+    NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
+  },
   extends: [betterAuthEnv, vercel()],
   isServer: typeof window === "undefined",
 });
