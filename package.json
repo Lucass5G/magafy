@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "prisma:generate": "prisma generate",
     "migrate": "npx @better-auth/cli@latest migrate -y",
     "generate": "npx @better-auth/cli@latest generate -y",
-    "build": "npm run generate && next build --turbopack",
+    "build": "next build --turbopack",
     "start": "next start",
     "lint": "biome check",
-    "format": "biome format --write"
+    "format": "biome format --write",
+    "postinstall": "npm run prisma:generate && npm run generate"
   },
   "prisma": {
     "schema": "./prisma/schema.prisma",
