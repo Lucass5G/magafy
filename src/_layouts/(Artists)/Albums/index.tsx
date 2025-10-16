@@ -49,7 +49,10 @@ export function ArtistsAlbums() {
                 {album.name}
               </Heading>
               <Heading as={"h6"} className={"text-xs md:text-sm"}>
-                {format(album.release_date, "dd/MM/yyyy")}
+                {format(
+                  new Date(album.release_date.replaceAll("-", "/")),
+                  "dd/MM/yyyy",
+                )}
               </Heading>
             </div>
           </div>
