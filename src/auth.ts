@@ -5,9 +5,9 @@ import {nextCookies} from "better-auth/next-js";
 import {env} from "@/_config/env";
 
 const prisma = new PrismaClient();
-const trustedOrigin = [
-  "http://127.0.0.1:3000",
-].concat([env.VERCEL_URL, env.VERCEL_BRANCH_URL].filter(Boolean) as string[]);
+const trustedOrigin = ["http://127.0.0.1:3000"].concat(
+  [env.VERCEL_URL, env.VERCEL_BRANCH_URL].filter(Boolean) as string[],
+);
 
 console.log("Trusted: ", trustedOrigin);
 
@@ -16,7 +16,7 @@ export const auth = betterAuth({
   database: prismaAdapter(prisma, {
     provider: "postgresql",
   }),
-  baseURL: "http://127.0.0.1:3000",
+  baseURL: env.VERCEL_BRANCH_URL || env.VERCEL_URL || "http://127.0.0.1:3000",
   trustedOrigins: trustedOrigin,
   advanced: {
     cookiePrefix: "better-auth",
