@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "migrate": "npx @better-auth/cli@latest migrate -y",
+    "generate": "npx @better-auth/cli@latest generate -y",
+    "build": "npm run migrate && npm run generate && next build --turbopack",
     "start": "next start",
     "lint": "biome check",
     "format": "biome format --write"
