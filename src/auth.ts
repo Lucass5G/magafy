@@ -7,9 +7,7 @@ import {env} from "@/_config/env";
 const prisma = new PrismaClient();
 const trustedOrigin = [
   "http://127.0.0.1:3000",
-  env.VERCEL_URL ?? "",
-  env.VERCEL_BRANCH_URL ?? "",
-];
+].concat([env.VERCEL_URL, env.VERCEL_BRANCH_URL].filter(Boolean) as string[]);
 
 console.log("Trusted: ", trustedOrigin);
 
