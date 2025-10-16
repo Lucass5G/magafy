@@ -1,6 +1,7 @@
 import {ofetch} from "ofetch";
+import {env} from "@/_config/env";
 
 export const apiFetch = ofetch.create({
-  baseURL: "http://127.0.0.1:3000/api",
+  baseURL: `${env.BASE_URL}/api`,
   retry: 1,
 });
