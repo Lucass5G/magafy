@@ -1,11 +1,15 @@
+import {PrismaClient} from "@prisma/client";
 import {betterAuth} from "better-auth";
+import {prismaAdapter} from "better-auth/adapters/prisma";
 import {nextCookies} from "better-auth/next-js";
-import Database from "better-sqlite3";
 import {env} from "@/_config/env";
 
+const prisma = new PrismaClient();
 export const auth = betterAuth({
   plugins: [nextCookies()],
-  database: new Database("database.sqlite"),
+  database: prismaAdapter(prisma, {
+    provider: "postgresql",
+  }),
   baseURL: "http://127.0.0.1:3000",
   trustedOrigins: ["http://127.0.0.1:3000"],
   advanced: {
