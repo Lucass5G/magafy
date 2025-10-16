@@ -5,15 +5,11 @@ import {nextCookies} from "better-auth/next-js";
 import {env} from "@/_config/env";
 
 const prisma = new PrismaClient();
-const trustedOrigin = ["http://127.0.0.1:3000"];
-
-if (env.VERCEL_BRANCH_URL) {
-  trustedOrigin.push(env.VERCEL_BRANCH_URL);
-}
-
-if (env.VERCEL_URL) {
-  trustedOrigin.push(env.VERCEL_URL);
-}
+const trustedOrigin = [
+  "http://127.0.0.1:3000",
+  env.VERCEL_URL ?? "",
+  env.VERCEL_BRANCH_URL ?? "",
+];
 
 export const auth = betterAuth({
   plugins: [nextCookies()],
