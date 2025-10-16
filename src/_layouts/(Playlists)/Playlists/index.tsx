@@ -18,7 +18,7 @@ export function Playlists() {
         <div className={"flex flex-row gap-4 items-center"} key={playlist.id}>
           <Image
             src={playlist.images?.[0]?.url ?? "globe.svg"}
-            alt={"Imagem do artista"}
+            alt={`Imagem da playlist ${playlist.name}`}
             width={playlist.images?.[0]?.width ?? 64}
             height={playlist.images?.[0]?.height ?? 64}
             className={"max-w-16 max-h-16"}
@@ -33,10 +33,14 @@ export function Playlists() {
         <Pagination className={"flex justify-end"}>
           <PaginationContent className={"flex flex-row gap-6"}>
             <PaginationItem>
-              <PaginationPrevious onClick={previousPlaylists} />
+              <PaginationPrevious
+                href="#"
+                onClick={previousPlaylists}
+                aria-label="Go to previous page"
+              />
             </PaginationItem>
             <PaginationItem>
-              <PaginationNext onClick={nextPlaylists} />
+              <PaginationNext href="#" onClick={nextPlaylists} aria-label="Go to next page" />
             </PaginationItem>
           </PaginationContent>
         </Pagination>
