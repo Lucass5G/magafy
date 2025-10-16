@@ -4,12 +4,17 @@ import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 import {ReactQueryDevtools} from "@tanstack/react-query-devtools";
 import {type PropsWithChildren, useState} from "react";
 
-function makeQueryClient() {
-  return new QueryClient();
-}
-
 export function ReactQueryProvider({ children }: Readonly<PropsWithChildren>) {
-  const [queryClient] = useState(() => makeQueryClient());
+  const [queryClient] = useState(
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            staleTime: 60 * 1000,
+          },
+        },
+      }),
+  );
 
   return (
     <QueryClientProvider client={queryClient}>

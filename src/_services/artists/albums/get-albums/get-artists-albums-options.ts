@@ -10,5 +10,9 @@ export const getArtistsAlbumsOptions = ({
   return queryOptions({
     queryKey: ["get-artists-albums", id, { offset, limit }],
     queryFn: () => getArtistsAlbums({ limit, offset, id }),
+    retry: 1,
+    refetchOnWindowFocus: false,
+    retryOnMount: false,
+    staleTime: 1000 * 60 * 60 * 24,
   });
 };

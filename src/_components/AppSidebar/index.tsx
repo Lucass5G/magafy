@@ -13,6 +13,7 @@ import {
 import {Heading} from "@components/Typography";
 import {DiscIcon, HomeIcon, PlayIcon} from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import {usePathname} from "next/navigation";
 
 const items = [
@@ -57,10 +58,10 @@ export function AppSidebar() {
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild isActive={pathname === item.url}>
-                    <a href={item.url} className={"text-base"}>
+                    <Link href={item.url} className={"text-base"}>
                       <item.icon />
                       {item.title}
-                    </a>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
