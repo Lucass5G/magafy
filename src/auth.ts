@@ -11,6 +11,8 @@ const trustedOrigin = [
   env.VERCEL_BRANCH_URL ?? "",
 ];
 
+console.log("Trusted: ", trustedOrigin);
+
 export const auth = betterAuth({
   plugins: [nextCookies()],
   database: prismaAdapter(prisma, {
