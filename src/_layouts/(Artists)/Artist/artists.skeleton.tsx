@@ -6,16 +6,26 @@ import {useArtistsStore} from "@/_layouts/(Artists)/Artist/artists.store";
 export function ArtistsSkeleton() {
   const { pagination } = useArtistsStore();
   return (
-    <div className={" flex flex-col gap-6 px-8"}>
-      {Array.from({ length: pagination.limit }).map(() => (
-        <div
-          className={"flex flex-row gap-4"}
-          key={`skeleton-artist-${generateId(5)}`}
-        >
-          <Skeleton className={"h-16 w-16 rounded-full"} />
-          <Skeleton className={"w-1/2 h-16"} />
-        </div>
-      ))}
+    <div className={" flex flex-col gap-12 px-8 w-full pt-8"}>
+      <div className={"flex flex-col gap-2"}>
+        <Skeleton className={"w-36 h-8 rounded-xs "} />
+        <Skeleton className={"w-[308px] h-4 rounded-xs"} />
+      </div>
+      <div className={"flex flex-col gap-6"}>
+        {Array.from({ length: pagination.limit }).map(() => (
+          <div
+            className={"flex flex-row gap-4"}
+            key={`skeleton-artist-${generateId(5)}`}
+          >
+            <Skeleton className={"h-16 w-16 rounded-full"} />
+            <Skeleton className={"w-1/2 h-16"} />
+          </div>
+        ))}
+      </div>
+      <div className={"flex flex-row justify-end gap-2"}>
+        <Skeleton className={"w-10 h-10 rounded-full"} />
+        <Skeleton className={"w-10 h-10 rounded-full"} />
+      </div>
     </div>
   );
 }
